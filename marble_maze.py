@@ -11,7 +11,7 @@
 #               the whole screen or only small parts to minimise the number of bytes sent to the display.
 # Author      : Trevor Fillary
 # modification: 04-08-2021
-########################################################################
+############################################################################
 
 import smbus			#import SMBus module of I2C
 import time
