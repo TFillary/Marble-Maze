@@ -2,8 +2,8 @@
 ## Raspberry Pi with a Pirate Audio dual mic HAT and a gyro sensor 
 
 Features:
-  - Generates random mazes from easy to difficult
-  - Gyro enables the 'marble' to be controlled by tilting the Raspberry Pi
+  - Generates random mazes from easy to difficult, scaled to fit the screen
+  - Gyro enables the 'marble' to be controlled by tilting the Raspberry Pi (GY-521 MPU-6050 3 Axis Gyroscope and 3 Axis Accelerometer) - the sensor is located under the HAT
   - Display library optimised to enable smooth operation on a Raspberry Pi Zero
 
 ![1-P1010462](https://user-images.githubusercontent.com/30411837/128222213-18a38681-48df-4394-94e8-ade6c308bd2b.JPG)
