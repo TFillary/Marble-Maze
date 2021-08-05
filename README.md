@@ -1,5 +1,5 @@
 # Marble-Maze
-## Raspberry Pi with a Pirate Audio dual mic HAT and a gyro sensor 
+## Raspberry Pi with a Pirate Audio HAT and a gyro sensor 
 
 Features:
   - Generates random mazes from easy to difficult, scaled to fit the screen
