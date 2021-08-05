@@ -71,6 +71,7 @@ PLAYING = 1
 MAZE = 2
 MENU = 3 
 FINISHED = 4
+GENERATE = 5
 mode = MENU  # default to menu at start
 
 # Incitialise global array ready for use
@@ -154,7 +155,7 @@ def draw_menu():
     draw.rectangle((40, 18, 200, 50), outline = ("black"))
     draw.text((50, 20), "Marble Maze", font = font2, fill = ("#eba414")) # Title
 
-    txt_colour = (0,0,0)
+    txt_colour = (0,0,0) # black
     draw.text((5, 60), "Play", font = font, fill = txt_colour) # A button
     draw.text((5, 180), "Generate", font = font, fill = txt_colour) # B button
     draw.text((170, 60), "Tricky", font = font, fill = txt_colour)
@@ -307,7 +308,7 @@ def btn2handler():
     if mode == PLAYING or mode == FINISHED:
         mode = MENU
     else: # Menu option for button B is to generate a new maze
-        generate_new_maze()
+        mode = GENERATE
 
 def btn3handler():
     global mode
@@ -374,6 +375,14 @@ while True:
         marble_x, marble_y = draw_maze()  # Initialise and draw maze
         mode = PLAYING
         game_start = time.time()
+
+    elif mode == GENERATE:
+        font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 16) # Create our font, passing in the font file and font size
+        draw.text((5, 180), "Generate", font = font, fill = "red") # B button
+        # redraw menu
+        st7789.display(image)
+        generate_new_maze()
+        mode = MENU
     
     if mode != FINISHED and marble_y >= exit_index_y:
         game_end = time.time()
