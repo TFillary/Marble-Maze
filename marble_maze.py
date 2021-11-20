@@ -278,7 +278,7 @@ def move_marble(initial_mx,initial_my): # parameters are marblex and marbley
     if next_my < MARBLE_MIN_SCREEN_INDEX:
         next_my = MARBLE_MIN_SCREEN_INDEX
     # check exit too otherwise collision checks may fail
-    i, j = numpy_maze_data.shape
+    i, _ = numpy_maze_data.shape
     if next_my > i:
         next_my = i
 
