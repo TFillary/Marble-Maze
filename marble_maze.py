@@ -138,9 +138,21 @@ def read_gyro_xy():
     acc_y = read_raw_data(ACCEL_YOUT_H)
 
     #Full scale range +/- 250 degree/C as per sensitivity scale factor
-    Ax = acc_x/4087.0      # was 16384 but 4096 (/4) seems to work better for this application when need to step a pixel at a time
-    Ay = acc_y/4087.0
-    return int(Ax), int(Ay)  # return integer steps
+    Ax = acc_x/16384.0      
+    Ay = acc_y/16384.0
+
+    if Ax >= 0:
+        Dx = 1
+    else:
+        Dx = -1
+    
+    if Ay >= 0:
+        Dy = 1
+    else:
+        Dy = -1
+    
+    #print (Ax, Ay, int(Dx), int(Dy))
+    return int(Dx), int(Dy)  # return integer steps
 
 def draw_menu():
     global image, draw
